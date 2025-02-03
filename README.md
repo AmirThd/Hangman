@@ -14,7 +14,7 @@ Skapa en version av det klassiska spelet Hangman.
 
 py main.py
 
-# Hur Spelar som Flask App i HangmanFlask
+# Spelar som Flask App i HangmanFlask
 
 py app.py
 
