@@ -10,8 +10,12 @@ Skapa en version av det klassiska spelet Hangman.
 
 ·  Spelet fortsätter tills spelaren har gissat hela ordet eller har gjort tillräckligt många felaktiga gissningar.
 
-# Hur Spelar denna Flask App
+# Spelar som command line App i HangmanCommand
 
-Py app.py
+py main.py
+
+# Hur Spelar som Flask App i HangmanFlask
+
+py app.py
 
 Running on http://127.0.0.1:5000
