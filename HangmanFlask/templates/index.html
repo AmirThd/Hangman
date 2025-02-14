@@ -17,11 +17,11 @@
         {% if not game_over %}
         <form method="post">
             <input type="text" name="guess" maxlength="1" required autofocus>
-            <button type="submit">Gissa</button>
+            <button type="submit">Guess</button>
         </form>
         {% endif %}
         
-        <a href="{{ url_for('new_game') }}" class="new-game">Nytt spel</a>
+        <a href="{{ url_for('new_game') }}" class="new-game">New Game</a>
     </div>
 </body>
 </html>
