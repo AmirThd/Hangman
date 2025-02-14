@@ -43,7 +43,7 @@ def hangman():
             print("Please enter only one letter from the alphabet.")
 
     if attempts == 0:
-        print(f"\nSorry, the game is over :( The word is {word}.")
+        print(f"\nSorry, Game over :( The word is {word}.")
     else:
         print(f"\nCongratulations! You guessed the word: {word}")
 
