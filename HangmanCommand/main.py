@@ -1,10 +1,10 @@
 import random
 
-# Lista med 10 fördefinierade ord
+# List of 10 pre defined word
 words = ["python", "programmering", "dator", "algoritm", "utveckling", "kodning", "debugger", "variabel", "funktion", "loop"]
 
 def display_word(word, guessed_letters):
-    #Visar ordet med gissade bokstäver och understreck för ogissade
+    #Show the word with guessed letters and underscore for remaining letters
     display = ""
     for letter in word:
         if letter in guessed_letters:
@@ -14,39 +14,39 @@ def display_word(word, guessed_letters):
     return display
 
 def hangman():
-    word = random.choice(words) #Väljer ett slumpmässigt ord från listan
-    word_letters = set(word)    # Unika bokstäver i ordet
-    guessed_letters = set()     # Gissade bokstäver
-    attempts = 20               # Antal max felgissningar
+    word = random.choice(words) # Choose a random word from the list
+    word_letters = set(word)    # Unique ltters in the word
+    guessed_letters = set()     # Guessed letters
+    attempts = 20               # Max number of allowed failed trials
 
-    print(f"Ordet består av {len(word)} bokstäver.")
+    print(f"The word has {len(word)} letters.")
 
     while len(word_letters) > 0 and attempts > 0:
-        print(f"\nDu har {attempts} försök kvar.")
-        print("Gissade bokstäver:", ' '.join(guessed_letters))
-        print("Nuvarande ord:", display_word(word, guessed_letters))
+        print(f"\nYou have {attempts} attempts.")
+        print("Gussed letters are: ", ' '.join(guessed_letters))
+        print("The word is:", display_word(word, guessed_letters))
 
-        guess = input("Gissa en bokstav: ").lower()
+        guess = input("Please guess a letter: ").lower()
 
         if len(guess) == 1 and guess.isalpha():
             if guess in guessed_letters:
-                print("Du har redan gissat den bokstaven. Försök igen!")
+                print("You have already guessed this letter. Please try again!")
             elif guess in word_letters:
                 word_letters.remove(guess)
                 guessed_letters.add(guess)
-                print("Bra gissning!")
+                print("Correct!")
             else:
                 attempts -= 1
                 guessed_letters.add(guess)
-                print("Tyvärr, den bokstaven finns inte i ordet.")
+                print("Sorry, this letter does not exist in the word.")
         else:
-            print("Ogiltig gissning. Vänligen ange en enskild bokstav.")
+            print("Please enter only one letter from the alphabet.")
 
     if attempts == 0:
-        print(f"\nTyvärr, du har slut på försök. Ordet var {word}.")
+        print(f"\nSorry, the game is over :( The word is {word}.")
     else:
-        print(f"\nGrattis! Du gissade rätt ord: {word}")
+        print(f"\nCongratulations! You guessed the word: {word}")
 
 if __name__ == "__main__":
-    print("Välkommen till Hangman!")
+    print("Welocme to Hangman!")
     hangman()
